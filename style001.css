@@ -1,0 +1,153 @@
+.tippin-button-yes
+{
+    /*background-color: #FF9B97;*/
+    background: url('chrome-extension://__MSG_@@extension_id__/images/button-lightning.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height:18px;
+    font-size:9px;
+    border-radius:9px;
+}
+
+.tippin-button-yes:hover
+{
+    cursor: pointer;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/button-lightning-hover.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+
+.tippin-button-none
+{
+    /*background-color: #FF9B97;*/
+    /*background: url('chrome-extension://__MSG_@@extension_id__/images/button-none.png');*/
+    background: url('chrome-extension://__MSG_@@extension_id__/images/button-lightning.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height:18px;
+    font-size:9px;
+    border-radius:9px;
+}
+
+.tippin-button-none:hover
+{
+    cursor: pointer;
+    /*ackground: url('chrome-extension://__MSG_@@extension_id__/images/button-none-hover.png');*/
+    background: url('chrome-extension://__MSG_@@extension_id__/images/button-lightning-hover.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+
+.rectbox{
+    margin: 10px;
+    border: 1px solid #326891;
+    border-radius: 15px;
+    font-size: 15px;
+    transition: 0.6s;
+    background: #6288A5;
+    color: white;
+    padding: 10px 20px;
+
+}
+.rectbox:hover{
+    margin: 10px;
+    border: 1px solid #326891;
+    border-radius: 15px;
+    font-size: 15px;
+    transition: 0.6s;
+    background: #326891;
+    color: white;
+    padding: 10px 20px;
+
+}
+
+.AdaptiveMedia-photoContainer{
+    padding-bottom: 10px;
+}
+
+#photoModal {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height:100%;
+    text-align:left;
+    z-index: 5000;
+    background-color:rgba(0,0,0,0.6);
+}
+
+#photoModal div#dialog {
+    top: 50%;
+    left: 50%;
+    width:480px;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #e1e8ed;
+    border-radius: 5px;
+    padding:0px;
+    text-align:left;
+}
+
+#photoModal div#header {
+   text-align: left;
+   margin: 0px;
+   padding: 16px;
+}
+
+#photoModal div#contents {
+   padding: 8px 16px;
+   border-top: 1px solid #e1e8ed;
+   border-bottom: 1px solid #e1e8ed;
+}
+
+#photoModal input[type=checkbox] {
+   transform: scale(1.1);
+}
+
+#photoModal div#footer {
+   min-height: 30px;
+   height: auto;
+   vertical-align: left;
+   margin: 0px;
+   padding: 16px;
+}
+
+#photoModal a.btn {
+   margin-left: 6px;
+}
+
+#photoModal p {
+   margin: 8px 0px;
+   font-size: 1.1em;
+}
+
+.random{
+    width: 10px;
+    height: 10px;
+}
+
+.ui-dialog {
+    z-index: 10000 !important;
+}
+
+.hidden{
+    display: none;
+}
+
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+.ui-state-default2 {
+    padding: 10px 20px;
+    font-size: 8px;
+}
+
+
+.footer {
+    color: #888;
+    font-weight: bold;
+    font-size: 12px;
+}

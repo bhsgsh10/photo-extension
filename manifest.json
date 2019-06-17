@@ -1,0 +1,44 @@
+{
+    "name": "NYT-Provenance-public",
+    "version": "0.2.1",
+    "description": "Identify source of images for users",
+    "manifest_version": 2,
+    "icons": { 
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "64": "icon.png",
+      "128": "icon-128.png" },
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_icon": {
+          "16": "icon-16.png",
+          "32": "icon-32.png",
+          "64": "icon.png",
+          "128": "icon-128.png"
+        }    
+    },
+    "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
+    "content_scripts": [
+      {
+        "matches": ["https://twitter.com/*"],
+        "js": ["jquery.js", "contentScript.js", "jquery-ui.js", "jquery-ui.min.js"],
+        "css": ["style001.css", "jquery-ui.css", "jquery-ui.min.css"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "permissions": [
+      "https://twitter.com/*",
+      "https://api.tippin.me/*",
+      "storage",
+      "activeTab",
+      "tabs",
+      "webNavigation"
+      ],
+    "web_accessible_resources": [
+      "images/*.png"
+    ]
+}
