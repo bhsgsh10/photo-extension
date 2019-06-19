@@ -59,11 +59,17 @@ $(document).ready(function() {
             if (username != null) {
                 var rectBox = "<button class='rectbox' id='"+tweetid+"'>"+buttonText+"</button>";
                 var card2 = $(this).find(".card2")
-                if (!card2.hasClass("infoButtonAdded")) {
+                if (!card2.hasClass("infoButtonAdded") && !card2.hasClass("has-autoplayable-media")) {
                     card2.addClass("infoButtonAdded")
                     card2.append(rectBox)
                 }
+                // var overlay = "<div class='overlay'>Some infromation will come here</div>"
+                // var summaryCard = $(this).find(".SummaryCard--large")
+                // if (!summaryCard.hasClass("overlayAdded")) {
+                //     summaryCard.addClass("overlayAdded")
 
+                // }
+            
                 var outerContainer = $(this).find(".AdaptiveMediaOuterContainer")
                 var mediaContainer = $(this).find(".AdaptiveMedia-photoContainer")
                 if (mediaContainer.length) {
@@ -72,8 +78,15 @@ $(document).ready(function() {
                         outerContainer.addClass("infoButtonAdded")
                         outerContainer.append(rectBox)
                     }
+                    if (!outerContainer.hasClass("overlayAdded")) {
+                        outerContainer.addClass("overlayAdded")
+                        //add overlay here
+                    }
                 }
-                
+
+
+                //Add overlays on top of all photos
+
             }
         });
 
