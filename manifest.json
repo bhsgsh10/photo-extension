@@ -21,8 +21,8 @@
     "content_scripts": [
       {
         "matches": ["https://twitter.com/*"],
-        "js": ["jquery.js", "contentScript.js", "jquery-ui.js", "jquery-ui.min.js"],
-        "css": ["style001.css", "jquery-ui.css", "jquery-ui.min.css"],
+        "js": ["jquery.js", "contentScript.js", "jquery-ui.min.js"],
+        "css": ["style001.css", "jquery-ui.min.css"],
         "run_at": "document_end"
       }
     ],

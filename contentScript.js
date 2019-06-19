@@ -64,11 +64,16 @@ $(document).ready(function() {
                     card2.append(rectBox)
                 }
 
-                var photoContainer = $(this).find(".AdaptiveMediaOuterContainer")
-                if (!photoContainer.hasClass("infoButtonAdded")) {
-                    photoContainer.addClass("infoButtonAdded")
-                    photoContainer.append(rectBox)
+                var outerContainer = $(this).find(".AdaptiveMediaOuterContainer")
+                var mediaContainer = $(this).find(".AdaptiveMedia-photoContainer")
+                if (mediaContainer.length) {
+                    console.log("Photo found in link")
+                    if (!outerContainer.hasClass("infoButtonAdded")) {
+                        outerContainer.addClass("infoButtonAdded")
+                        outerContainer.append(rectBox)
+                    }
                 }
+                
             }
         });
 
