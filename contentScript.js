@@ -58,17 +58,29 @@ $(document).ready(function() {
             var tweetid = $(this).attr('data-tweet-id');
             if (username != null) {
                 var rectBox = "<button class='rectbox' id='"+tweetid+"'>"+buttonText+"</button>";
-                var card2 = $(this).find(".card2")
-                if (!card2.hasClass("infoButtonAdded") && !card2.hasClass("has-autoplayable-media")) {
-                    card2.addClass("infoButtonAdded")
-                    card2.append(rectBox)
+                var mediaLinkContainer = $(this).find(".card2")
+                if (!mediaLinkContainer.hasClass("infoButtonAdded") && !mediaLinkContainer.hasClass("has-autoplayable-media")) {
+                    mediaLinkContainer.addClass("infoButtonAdded")
+                    mediaLinkContainer.append(rectBox)
                 }
-                // var overlay = "<div class='overlay'>Some infromation will come here</div>"
-                // var summaryCard = $(this).find(".SummaryCard--large")
-                // if (!summaryCard.hasClass("overlayAdded")) {
-                //     summaryCard.addClass("overlayAdded")
-
-                // }
+                
+                //adding overlay to tweets with links in them - links that contain images
+                var overlay = `<div class="overlay">
+                                <div><h3 class="header">Information about the photo(s) in the tweet</h3></div>
+                                    <div class="bullet-list"    
+                                        <ul class="info-list">
+                                            <li>Photographer: Nina Berman</li>
+                                            <li>Taken on: Jan. 20, 2017</li>
+                                            <li>Location: Washington DC, USA</li>
+                                            <li>Occasion: Political rally</li>
+                                            <li>Publication: The New York Times </li>
+                                        </ul>
+                                    </div>
+                                </div>`
+                if (!mediaLinkContainer.hasClass("overlayAdded") && !mediaLinkContainer.hasClass("has-autoplayable-media")) {
+                    mediaLinkContainer.addClass("overlayAdded")
+                    mediaLinkContainer.append(overlay)
+                }
             
                 var outerContainer = $(this).find(".AdaptiveMediaOuterContainer")
                 var mediaContainer = $(this).find(".AdaptiveMedia-photoContainer")
@@ -80,13 +92,9 @@ $(document).ready(function() {
                     }
                     if (!outerContainer.hasClass("overlayAdded")) {
                         outerContainer.addClass("overlayAdded")
-                        //add overlay here
+                        outerContainer.append(overlay)
                     }
                 }
-
-
-                //Add overlays on top of all photos
-
             }
         });
 

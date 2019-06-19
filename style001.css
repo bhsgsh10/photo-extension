@@ -151,3 +151,47 @@
     font-weight: bold;
     font-size: 12px;
 }
+
+.overlayAdded .overlay{
+    background-color: rgba(0,0,0,0.6);
+    transition: opacity .5s;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    display: none;
+    border: 1px solid white;
+    border-radius: .85714em;
+    color: white;
+}
+
+.overlayAdded{
+    display: block;
+    position: relative;
+}
+
+.overlayAdded:hover .overlay {
+    opacity: 1;
+    display: block;
+    transition: opacity .5s;
+}
+.header{
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+ul{
+    list-style-position: inside;
+}
+li {
+    margin-bottom: 10px;
+}
+
+.bullet-list{
+    padding: 40px;
+    color: white;
+}
