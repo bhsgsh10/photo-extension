@@ -8,3 +8,5 @@
 
 * Code was borrowed from Tippin's chrome extension. Some of that code is being used, some of it is not. This project is still under development, so redundant/unncessary code will be removed as the project matures.
 
+* In the latest iteration, I have added an overlay that appears over images when users hover over them. This works well for single images, but we need to think about scenarios where there could be multiple images in a post, and only one or two may be unsourced. 
+
