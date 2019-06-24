@@ -2,9 +2,16 @@
 // Listenr for messages
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-
-      //Log
       console.log('[chrome.runtime.onMessage] '+request.message);
+      // Gets source information for a give photo id from the API
+      if (request.message == 'getsource') {
+        chrome.tabs.executeScript(null, {
+          code: 'var id = ' + request.value
+        }, function() {
+          console.log("Getting source")
+          chrome.tabs.executeScript(null, {file: "requestScript.js"})
+        })
+      }
 
       //If listeners
       if (request.message == 'listeners'){
@@ -25,7 +32,18 @@ chrome.runtime.onMessage.addListener(
         //Reload tdata (Twitter users)
         console.log('Reloading tdata...');
         loadDataTwitterUsers();
-      }else if(request.message == 'buttonClicked')
+      }
+      //handle the message sent back from requestScript
+      else if (request.message == 'readsource') {
+        //send message back to content script
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+          //send message to contentScript
+          chrome.tabs.sendMessage(tabs[0].id, {message: 'readphotosource', value: request.value}, function(response) {});  
+        });
+      }
+      
+      
+      else if(request.message == 'buttonClicked')
       {
         /*CHANGE CODE HERE IF BUTTON CLICK HAS TO BE HANDLED VIA MESSAGES */
         return;

@@ -184,10 +184,11 @@
     text-align: center;
 }
 
-ul{
+ol{
     list-style-position: inside;
 }
 li {
+    font-size: 12px;
     margin-bottom: 10px;
 }
 

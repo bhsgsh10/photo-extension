@@ -33,6 +33,8 @@
     "permissions": [
       "https://twitter.com/*",
       "https://api.tippin.me/*",
+      "http://localhost/*",
+      "https://cors-anywhere.herokuapp.com/https://my-json-server.typicode.com/*",
       "storage",
       "activeTab",
       "tabs",
@@ -40,5 +42,6 @@
       ],
     "web_accessible_resources": [
       "images/*.png"
-    ]
+    ],
+    "Content-Security-Policy": "script-src 'self' https://cors-anywhere.herokuapp.com/https://my-json-server.typicode.com; object-src 'self'"
 }
