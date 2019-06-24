@@ -8,5 +8,9 @@
 
 * Code was borrowed from Tippin's chrome extension. Some of that code is being used, some of it is not. This project is still under development, so redundant/unncessary code will be removed as the project matures.
 
-* In the latest iteration, I have added an overlay that appears over images when users hover over them. This works well for single images, but we need to think about scenarios where there could be multiple images in a post, and only one or two may be unsourced. 
+* Added an overlay that appears over images when users hover over them. This works well for single images, but we need to think about scenarios where there could be multiple images in a post, and only one or two may be unsourced. 
+
+* Added an API call to get the source information for the photos. Using typicode.com for the API response and cors-anywhere.herokuapp.com to overcome cross domain restrictions.
+
+* Image overlay is dissabled for now. It will be enabled again when I implement the API call on hovering over an image. Spinner should be added when the API call starts.
 
